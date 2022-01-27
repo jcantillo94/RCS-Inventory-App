@@ -24,6 +24,7 @@ class TableViewController: UITableViewCell, UITextFieldDelegate {
     
     override class func awakeFromNib() {
         super.awakeFromNib()
+    
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

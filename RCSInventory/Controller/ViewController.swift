@@ -378,7 +378,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
             if realm.objects(Product.self).filter("barcode == %@", scannedItem).isEmpty == false {
             descField.text = realm.objects(Product.self).filter("barcode == %@", scannedItem)[0].lngdesc
             
-            itemNumberTextField.text = realm.objects(Product.self).filter("barcode == %@", scannedItem)[0].prodno
+//            itemNumberTextField.text = realm.objects(Product.self).filter("barcode == %@", scannedItem)[0].prodno
             
             changingBoxCount.text = "x " + String(realm.objects(Product.self).filter("barcode == %@", scannedItem)[0].qtymaster)
             
@@ -448,7 +448,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
                 
             descField.text = realm.objects(Product.self).filter("barcode == [cd]%@", scannedItem)[0].lngdesc
             
-            itemNumberTextField.text = realm.objects(Product.self).filter("barcode == [cd]%@", scannedItem)[0].prodno
+//            itemNumberTextField.text = realm.objects(Product.self).filter("barcode == [cd]%@", scannedItem)[0].prodno
                 
                 if boxCountTextField.text != "" && looseItemCount.text != "" {
                 
@@ -477,7 +477,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
         }
         } else {
             descField.text = ""
-            itemNumberTextField.text = ""
+//            itemNumberTextField.text = ""
             changingBoxCount.text = "x ?"
             totalQtyPerBox.text = "/ ?"
             
@@ -654,10 +654,10 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
             
 //            oldArray?.append((barcode, itemNumberTextField.text!, descField.text!, boxCountTextField.text!, looseItemCount.text!, finalCount.text!))
             
-            oldArray.append(ProductDataEntry(barcode: barcode, prodNo: itemNumberTextField.text!, lngDesc: descField.text!, boxCount: boxCountTextField.text!, looseCount: looseItemCount.text!, finalCount: finalCount.text!))
+            oldArray.append(ProductDataEntry(barcode: barcode, prodNo: "00", lngDesc: descField.text!, boxCount: boxCountTextField.text!, looseCount: looseItemCount.text!, finalCount: finalCount.text!))
                 
             
-            print(barcode, itemNumberTextField.text!, descField.text!, boxCountTextField.text!, looseItemCount.text!, finalCount.text!)
+            print(barcode, "00", descField.text!, boxCountTextField.text!, looseItemCount.text!, finalCount.text!)
             print(oldArray ?? "no oldArray")
 //            oldArray?.append(("dog", "dog", "dog", "dog", "dog", "dog"))
             
@@ -681,7 +681,7 @@ class ViewController: UIViewController, UITextFieldDelegate, UIPickerViewDataSou
             print("test: ", strings ?? [])
             
             barcodeTextField.text = ""
-            itemNumberTextField.text = ""
+//            itemNumberTextField.text = ""
             descField.text = ""
             boxCountTextField.text = ""
             looseItemCount.text = ""
